@@ -42,5 +42,84 @@
         </peterakasdatum>
     </kiralyno>
 
+    <kiralyno Kkod = "ki2">
+        <nev>Aranyszárny</nev>
+        <eletkor>3</eletkor>
+        <peterakasdatum>
+            <honap>Június</honap>
+            <nap>3</nap>
+        </peterakasdatum>
+    </kiralyno>
 
+    <kiralyno Kkod = "ki3">
+        <nev>Bíborka</nev>
+        <eletkor>3</eletkor>
+        <peterakasdatum>
+            <honap>Április</honap>
+            <nap>23</nap>
+        </peterakasdatum>
+    </kiralyno>
+
+    <!-- Dolgozók-->
+    <dolgozo Dkod = "do1">
+        <nev>Virágszirom Vilmos</nev>
+        <kedvenccirag>Napraforgó</kedvenccirag>
+        <meret>
+            <testhossz>4</testhossz>
+            <suly>6</suly>
+        </meret>
+    </dolgozo>
+
+    <dolgozo Dkod = "do2">
+        <nev>Sejtépítő Sándor</nev>
+        <kedvenccirag>Akác</kedvenccirag>
+        <meret>
+            <testhossz>5</testhossz>
+            <suly>8</suly>
+        </meret>
+    </dolgozo>
+
+    <dolgozo Dkod = "do3">
+        <nev>Szorgos Szilárd</nev>
+        <kedvenccirag>Repce</kedvenccirag>
+        <meret>
+            <testhossz>7</testhossz>
+            <suly>4</suly>
+        </meret>
+    </dolgozo>
+
+    <!-- Herék-->
+    <here Hkod="he1">
+        <nev>Pollen Péter</nev>
+        <eletkor>2</eletkor>
+        <szarnysebesseg>11000/s</szarnysebesseg>
+    </here>
+
+    <here Hkod="he2">
+        <nev>Rovar Róbert</nev>
+        <eletkor>1</eletkor>
+        <szarnysebesseg>11400/s</szarnysebesseg>
+    </here>
+
+    <here Hkod="he2">
+        <nev>Gyűjtögető György</nev>
+        <eletkor>3</eletkor>
+        <szarnysebesseg>10000/s</szarnysebesseg>
+    </here>
+
+    <!-- Mézkészítés-->
+    <mezkeszites>
+        <virag>Akác</virag>
+        <Mennyiség>1</Mennyiség>
+    </mezkeszites>
+
+    <mezkeszites>
+        <virag>Napraforgó</virag>
+        <Mennyiség>5</Mennyiség>
+    </mezkeszites>
+
+    <mezkeszites>
+        <virag>Levendula</virag>
+        <Mennyiség>3</Mennyiség>
+    </mezkeszites>
 </meheszet>
