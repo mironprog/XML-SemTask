@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<meheszet>
+<!--Kaptárak-->
+    <kaptar kapkod = "kap1">
+        <homerseklet>32</homerseklet>
+        <lokacio>
+            <varos>Győr</varos>
+            <utca>Szondi</utca>
+            <hazszam>5</hazszam>
+        </lokacio>
+        <keretszam>16</keretszam>
+    </kaptar>
+    
+    <kaptar kapkod = "kap2">
+        <homerseklet>32</homerseklet>
+        <lokacio>
+            <varos>Sopron</varos>
+            <utca>Kossuth</utca>
+            <hazszam>15</hazszam>
+        </lokacio>
+        <keretszam>8</keretszam>
+    </kaptar>
+
+    <kaptar kapkod = "kap3">
+        <homerseklet>36</homerseklet>
+        <lokacio>
+            <varos>Szeged</varos>
+            <utca>Petőfi</utca>
+            <hazszam>46</hazszam>
+        </lokacio>
+        <keretszam>32</keretszam>
+    </kaptar>
+
+    <!-- Királynők-->
+    <kiralyno Kkod = "ki1">
+        <nev>ZümZüm</nev>
+        <eletkor>1</eletkor>
+        <peterakasdatum>
+            <honap>Május</honap>
+            <nap>1</nap>
+        </peterakasdatum>
+    </kiralyno>
+
+
+</meheszet>
