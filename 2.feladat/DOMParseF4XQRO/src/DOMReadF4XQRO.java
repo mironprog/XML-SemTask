@@ -28,9 +28,8 @@ public class DOMReadF4XQRO {
                     String szarnyseb = elem.getElementsByTagName("szarnysebesseg").item(0).getTextContent();
 
                     // Kiíratás blokk formátumban
-                    String hallgatoInfo = String.format(
-                            "Here neve: %s\nKor: %s\nSzárnysebessége :%s\n", neve, kor, szarnyseb);
-                    System.out.println(hallgatoInfo);
+                    String mehecskeInfo = String.format("Here neve: %s\nKor: %s\nSzárnysebessége :%s\n", neve, kor, szarnyseb);
+                    System.out.println(mehecskeInfo);
                 }
             }
         } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
