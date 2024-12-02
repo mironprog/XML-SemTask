@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Egyszerű típusok -->
+    <xs:simpleType name="pozitivEgesz">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="honapTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Január"/>
+            <xs:enumeration value="Február"/>
+            <xs:enumeration value="Március"/>
+            <xs:enumeration value="Április"/>
+            <xs:enumeration value="Május"/>
+            <xs:enumeration value="Június"/>
+            <xs:enumeration value="Július"/>
+            <xs:enumeration value="Augusztus"/>
+            <xs:enumeration value="Szeptember"/>
+            <xs:enumeration value="Október"/>
+            <xs:enumeration value="November"/>
+            <xs:enumeration value="December"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Összetett típusok -->
+    <xs:complexType name="lokacioTipus">
+        <xs:sequence>
+            <xs:element name="varos" type="xs:string"/>
+            <xs:element name="utca" type="xs:string"/>
+            <xs:element name="hazszam" type="pozitivEgesz"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="meretTipus">
+        <xs:sequence>
+            <xs:element name="testhossz" type="pozitivEgesz"/>
+            <xs:element name="suly" type="pozitivEgesz"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="peterakasDatumTipus">
+        <xs:sequence>
+            <xs:element name="honap" type="honapTipus"/>
+            <xs:element name="nap" type="pozitivEgesz"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    
+    <xs:element name="meheszet">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Kaptárak -->
+                <xs:element name="kaptar" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="homerseklet" type="pozitivEgesz"/>
+                            <xs:element name="lokacio" type="lokacioTipus"/>
+                            <xs:element name="keretszam" type="pozitivEgesz"/>
+                        </xs:sequence>
+                        <xs:attribute name="kapkod" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Királynők -->
+                <xs:element name="kiralyno" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nev" type="xs:string"/>
+                            <xs:element name="eletkor" type="pozitivEgesz"/>
+                            <xs:element name="peterakasdatum" type="peterakasDatumTipus"/>
+                        </xs:sequence>
+                        <xs:attribute name="Kkod" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Dolgozók -->
+                <xs:element name="dolgozo" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nev" type="xs:string"/>
+                            <xs:element name="kedvenccirag" type="xs:string"/>
+                            <xs:element name="meret" type="meretTipus"/>
+                        </xs:sequence>
+                        <xs:attribute name="Dkod" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Herék -->
+                <xs:element name="here" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nev" type="xs:string"/>
+                            <xs:element name="eletkor" type="pozitivEgesz"/>
+                            <xs:element name="szarnysebesseg" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="Hkod" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Mézkészítés -->
+                <xs:element name="mezkeszites" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="virag" type="xs:string"/>
+                            <xs:element name="mennyiseg" type="pozitivEgesz"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
