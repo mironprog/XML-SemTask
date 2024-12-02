@@ -13,11 +13,9 @@ public class DOMReadF4XQRO {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
 
-            // Root elem kiírása
-            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
-
             // Adatok feldolgozása
-            NodeList nodeList = doc.getElementsByTagName("here"); // "here" elemek feldolgozása
+            // "here" elemek feldolgozása
+            NodeList nodeList = doc.getElementsByTagName("here"); 
             
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node node = nodeList.item(i);
