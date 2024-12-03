@@ -70,7 +70,7 @@ public class DOMModifyF4XQRO {
                 System.out.println("4. Módosítás: Az első dolgozó kedvenc virága Tulipánra változtatva.");
             }
 
-            // Az XML dokumentum mentése a módosításokkal
+            // Az XML dokumentum mentése
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");

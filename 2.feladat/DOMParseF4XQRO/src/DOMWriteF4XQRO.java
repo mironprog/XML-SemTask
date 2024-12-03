@@ -16,7 +16,7 @@ public class DOMWriteF4XQRO {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
 
-            // Fa struktúra kiírása konzolra
+            // Fa struktúra kiírása
             System.out.println("XML Fa struktúra:");
             printNode(doc.getDocumentElement(), 0);
 
@@ -35,13 +35,13 @@ public class DOMWriteF4XQRO {
         }
     }
 
-    // Rekurzív függvény a fa struktúra kiírására
+    //Fa struktúra kiírására
     private static void printNode(Node node, int indent) {
         String indentation = " ".repeat(indent * 4); // szóközök minden szinten
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             System.out.println(indentation + "Elem: " + node.getNodeName());
 
-            // Attribútumok kiírása
+            // Elemek kiírása
             NamedNodeMap attributes = node.getAttributes();
             for (int i = 0; i < attributes.getLength(); i++) {
                 Node attr = attributes.item(i);
