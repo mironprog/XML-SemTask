@@ -36,7 +36,14 @@
     <xs:complexType name="meretTipus">
         <xs:sequence>
             <xs:element name="testhossz" type="pozitivEgesz"/>
-            <xs:element name="suly" type="pozitivEgesz"/>
+            <xs:element name="suly">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
