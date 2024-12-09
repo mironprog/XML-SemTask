@@ -25,7 +25,7 @@ public class DOMReadF4XQRO {
                     String kor = elem.getElementsByTagName("eletkor").item(0).getTextContent();
                     String szarnyseb = elem.getElementsByTagName("szarnysebesseg").item(0).getTextContent();
 
-                    // Kiíratás blokk formátumban
+                    // Kiíratás
                     String mehecskeInfo = String.format("Here neve: %s\nKor: %s\nSzárnysebessége :%s\n", neve, kor, szarnyseb);
                     System.out.println(mehecskeInfo);
                 }

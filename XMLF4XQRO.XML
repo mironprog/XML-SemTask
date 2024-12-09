@@ -10,6 +10,7 @@
             <hazszam>5</hazszam>
         </lokacio>
         <keretszam>16</keretszam>
+        <keretszam>24</keretszam>
     </kaptar>
     
     <kaptar kapkod = "kap2">
@@ -20,6 +21,7 @@
             <hazszam>15</hazszam>
         </lokacio>
         <keretszam>8</keretszam>
+        <keretszam>16</keretszam>
     </kaptar>
 
     <kaptar kapkod = "kap3">
@@ -108,17 +110,17 @@
     </here>
 
     <!-- Mézkészítés-->
-    <mezkeszites>
+    <mezkeszites kapkod = "kap1" Dkod = "do1">
         <virag>Akác</virag>
         <Mennyiség>1</Mennyiség>
     </mezkeszites>
 
-    <mezkeszites>
+    <mezkeszites kapkod = "kap2" Dkod = "do2">
         <virag>Napraforgó</virag>
         <Mennyiség>5</Mennyiség>
     </mezkeszites>
 
-    <mezkeszites>
+    <mezkeszites kapkod = "kap3" Dkod = "do3">
         <virag>Levendula</virag>
         <Mennyiség>3</Mennyiség>
     </mezkeszites>

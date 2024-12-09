@@ -16,13 +16,15 @@ public class DOMModifyF4XQRO {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
+            System.out.println("Az XML dokumentum betöltve.");
 
             // 1. Módosítás: Egy adott "kaptar" elem hőmérsékletének frissítése
             NodeList kaptarList = doc.getElementsByTagName("kaptar");
             if (kaptarList.getLength() > 0) {
                 Element firstKaptar = (Element) kaptarList.item(0);
+                String originalTemp = firstKaptar.getElementsByTagName("homerseklet").item(0).getTextContent();
                 firstKaptar.getElementsByTagName("homerseklet").item(0).setTextContent("35");
-                System.out.println("1. Módosítás: Az első kaptár hőmérséklete 35-re módosítva.");
+                System.out.println("1. Módosítás: Az első kaptár hőmérséklete módosítva " + originalTemp + " fokról 35 fokra.");
             }
 
             // 2. Módosítás: Új "kaptar" elem hozzáadása
@@ -50,7 +52,7 @@ public class DOMModifyF4XQRO {
             newKaptar.appendChild(newKeretszam);
 
             doc.getDocumentElement().appendChild(newKaptar);
-            System.out.println("2. Módosítás: Új kaptár hozzáadva Debrecen városában.");
+            System.out.println("2. Módosítás: Új kaptár hozzáadva. Adatok: kapkod=kap4, város=Debrecen, keretszám=12.");
 
             // 3. Módosítás: Egy "kiralyno" életkorának növelése
             NodeList kiralynoList = doc.getElementsByTagName("kiralyno");
@@ -59,15 +61,16 @@ public class DOMModifyF4XQRO {
                 String currentAge = firstKiralyno.getElementsByTagName("eletkor").item(0).getTextContent();
                 int newAge = Integer.parseInt(currentAge) + 1;
                 firstKiralyno.getElementsByTagName("eletkor").item(0).setTextContent(String.valueOf(newAge));
-                System.out.println("3. Módosítás: Az első királynő életkora növelve: " + newAge + " év.");
+                System.out.println("3. Módosítás: Az első királynő életkora növelve " + currentAge + "-ról " + newAge + " évre.");
             }
 
             // 4. Módosítás: Egy adott "dolgozo" elem kedvenc virágának megváltoztatása
             NodeList dolgozoList = doc.getElementsByTagName("dolgozo");
             if (dolgozoList.getLength() > 0) {
                 Element firstDolgozo = (Element) dolgozoList.item(0);
+                String originalFlower = firstDolgozo.getElementsByTagName("kedvenccirag").item(0).getTextContent();
                 firstDolgozo.getElementsByTagName("kedvenccirag").item(0).setTextContent("Tulipán");
-                System.out.println("4. Módosítás: Az első dolgozó kedvenc virága Tulipánra változtatva.");
+                System.out.println("4. Módosítás: Az első dolgozó kedvenc virága megváltoztatva " + originalFlower + "-ról Tulipánra.");
             }
 
             // Az XML dokumentum mentése
@@ -83,6 +86,7 @@ public class DOMModifyF4XQRO {
             System.out.println("\nAz XML sikeresen mentve a 'XMLF4XQROModified.xml' fájlba.");
 
         } catch (IOException | IllegalArgumentException | ParserConfigurationException | TransformerException | DOMException | SAXException e) {
+            System.err.println("Hiba történt: " + e.getMessage());
         }
     }
 }

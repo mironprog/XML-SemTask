@@ -113,10 +113,40 @@
                             <xs:element name="virag" type="xs:string"/>
                             <xs:element name="mennyiseg" type="pozitivEgesz"/>
                         </xs:sequence>
+                            <xs:attribute name="kapkod" type="xs:string" use="required" />
+                            <xs:attribute name="Dkod" type="xs:string" use="required" />
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+
+        <!-- Elsődleges Kulcsok -->
+        <xs:key name="kaptar_kulcs">
+            <xs:selector xpath="kaptar"/>
+            <xs:field xpath="@kapkod"/>
+        </xs:key>
+        <xs:key name="kiralyno_kulcs">
+            <xs:selector xpath="kiralyno"/>
+            <xs:field xpath="@Kkod"/>
+        </xs:key>
+        <xs:key name="dolgozo_kulcs">
+            <xs:selector xpath="dolgozo"/>
+            <xs:field xpath="@Dkod"/>
+        </xs:key>
+        <xs:key name="here_kulcs">
+            <xs:selector xpath="here"/>
+            <xs:field xpath="@Hkod"/>
+        </xs:key>
+
+        <!-- Idegen Kulcsok -->
+        <xs:keyref name="mezkeszites_kaptar_fk" refer="kaptar_kulcs">
+            <xs:selector xpath="mezkeszites"/>
+            <xs:field xpath="@kapkod"/>
+        </xs:keyref>
+        <xs:keyref name="mezkeszites_dolgozo_fk" refer="dolgozo_kulcs">
+            <xs:selector xpath="mezkeszites"/>
+            <xs:field xpath="@Dkod"/>
+        </xs:keyref>
     </xs:element>
 
 </xs:schema>
